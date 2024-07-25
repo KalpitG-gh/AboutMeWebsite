@@ -37,7 +37,7 @@ body.dark-mode {
 }
 
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(to bottom, #007bff, #0056b3);
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -48,6 +48,7 @@ header {
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
@@ -60,8 +61,8 @@ main {
 
 .card {
     background-color: #fff;
-    border-radius: 15px; /* Soften the corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; /* Soften the corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     padding: 20px; /* Add padding inside the boxes */
     margin-bottom: 30px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -97,7 +98,7 @@ body.dark-mode section:before {
 }
 
 section h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin-bottom: 10px;
     color: var(--primary-color);
     position: relative;
@@ -140,19 +141,39 @@ body.dark-mode .education-item {
     margin-bottom: 5px;
 }
 
-.education-item .education-date {
-    font-style: italic;
+.education-item p {
+    font-size: 1.2em; /* Adjust font size for better readability */
+}
+
+/* Skills Section */
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.category-title {
+    font-size: 1.7em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-category ul li {
     margin-bottom: 5px;
 }
 
-/* Contact Me Section */
+/* Contact Section */
 #contact ul {
-    list-style-type: none;
+    list-style: none;
     padding-left: 0;
 }
 
 #contact ul li {
     margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
 #contact ul li a {
@@ -162,56 +183,40 @@ body.dark-mode .education-item {
 }
 
 #contact ul li a:hover {
+    color: #0056b3;
     text-decoration: underline;
 }
 
-/* Bounce Animation */
-@keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-15px);
-    }
-    60% {
-        transform: translateY(-7px);
-    }
-}
-
-.bounce {
-    animation: bounce 2s infinite;
-}
-
-/* Dark Theme Toggle Button */
+/* Theme Toggle Button */
 .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
     background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .theme-toggle::before {
-    content: '\263D'; /* Unicode character for moon symbol */
+    content: '\263D'; /* Moon symbol */
     color: #fff;
     font-size: 1.5em;
 }
 
 body.dark-mode .theme-toggle::before {
-    content: '\2600'; /* Unicode character for sun symbol */
+    content: '\2600'; /* Sun symbol */
 }
 
 body.dark-mode .theme-toggle {
     background-color: #444;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }
