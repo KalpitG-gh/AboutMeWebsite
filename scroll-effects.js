@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Theme toggle button functionality
     const themeToggle = document.querySelector(".theme-toggle");
     const body = document.body;
 
