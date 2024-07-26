@@ -19,7 +19,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to right, #007bff, #00c6ff);
+    background: linear-gradient(to right, #ffffff, #f5f5f5);
     color: var(--text-color);
     padding-bottom: 100px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -30,14 +30,9 @@ body.dark-mode {
     color: #fff;
 }
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
+/* Header */
 header {
-    background: linear-gradient(to bottom, #007bff, #0056b3);
+    background-color: var(--primary-color);
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -48,34 +43,38 @@ header {
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
     font-size: 1.5em;
 }
 
-main {
-    padding-top: 20px; /* Ensure space above content for header */
+/* Main container */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Card styles */
 .card {
     background-color: #fff;
-    border-radius: 20px; /* Soften the corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    padding: 20px; /* Add padding inside the boxes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     margin-bottom: 30px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode .card {
-    background-color: #333;
+    background-color: var(--background-color-dark);
     color: #fff;
 }
 
+/* Section styles */
 section {
     margin-bottom: 30px;
-    padding-top: 50px; /* Space for roof head */
+    padding-top: 50px;
     position: relative;
     overflow: hidden;
 }
@@ -98,13 +97,14 @@ body.dark-mode section:before {
 }
 
 section h2 {
-    font-size: 2.2em;
+    font-size: 2em;
     margin-bottom: 10px;
     color: var(--primary-color);
     position: relative;
     z-index: 1;
 }
 
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: #fff;
@@ -113,7 +113,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 1000; /* Ensure footer appears above other content */
+    z-index: 1000;
 }
 
 footer p {
@@ -123,16 +123,16 @@ footer p {
 /* Education Section */
 .education-item {
     margin-bottom: 20px;
-    background-color: var(--background-color-light); /* Set background color for contrast */
-    padding: 15px; /* Add more padding for better spacing */
-    border-radius: 10px; /* Soften the corners */
+    background-color: var(--background-color-light);
+    padding: 15px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: var(--text-color); /* Ensure text color adjusts with theme */
+    color: var(--text-color);
 }
 
 body.dark-mode .education-item {
-    background-color: var(--background-color-dark); /* Adjust background color for dark mode */
-    color: #fff; /* Adjust text color for better readability on dark background */
+    background-color: var(--background-color-dark);
+    color: #fff;
 }
 
 .education-item h3 {
@@ -141,49 +141,19 @@ body.dark-mode .education-item {
     margin-bottom: 5px;
 }
 
-.education-item p {
-    font-size: 1.2em;
-}
-
-.education-date {
-    font-size: 1em;
-    color: #555;
-}
-
-.education-item p {
-    font-size: 1em;
-    margin-bottom: 10px; /* Add more space between text items */
-}
-
-/* Skills Section */
-.skill-category {
-    margin-bottom: 20px;
-}
-
-.category-title {
-    font-size: 1.7em;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.skill-category ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.skill-category ul li {
+.education-item .education-date {
+    font-style: italic;
     margin-bottom: 5px;
 }
 
-/* Contact Section */
+/* Contact Me Section */
 #contact ul {
-    list-style: none;
+    list-style-type: none;
     padding-left: 0;
 }
 
 #contact ul li {
     margin-bottom: 10px;
-    font-size: 1.2em;
 }
 
 #contact ul li a {
@@ -193,56 +163,52 @@ body.dark-mode .education-item {
 }
 
 #contact ul li a:hover {
-    color: #0056b3;
     text-decoration: underline;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
     background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .theme-toggle::before {
-    content: '\263D'; /* Moon symbol */
+    content: '\263D'; /* Unicode character for moon symbol */
     color: #fff;
     font-size: 1.5em;
 }
 
 body.dark-mode .theme-toggle::before {
-    content: '\2600'; /* Sun symbol */
+    content: '\2600'; /* Unicode character for sun symbol */
 }
 
 body.dark-mode .theme-toggle {
     background-color: #444;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-
-/* Section fade-in effect */
-section.visible {
-    animation: fadeIn 1s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
     }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.bounce {
+    animation: bounce 2s infinite;
 }
