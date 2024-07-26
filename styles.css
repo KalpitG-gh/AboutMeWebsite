@@ -180,6 +180,7 @@ body.dark-mode .education-item {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensure it is on top of other elements */
 }
 
 .theme-toggle::before {

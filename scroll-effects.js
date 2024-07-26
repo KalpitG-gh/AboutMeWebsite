@@ -37,4 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // Debugging: Log to ensure the script is working
+    console.log("Script loaded and running.");
 });
