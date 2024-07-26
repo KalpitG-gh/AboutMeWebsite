@@ -142,7 +142,17 @@ body.dark-mode .education-item {
 }
 
 .education-item p {
-    font-size: 1.2em; /* Adjust font size for better readability */
+    font-size: 1.2em;
+}
+
+.education-date {
+    font-size: 1em;
+    color: #555;
+}
+
+.education-item p {
+    font-size: 1em;
+    margin-bottom: 10px; /* Add more space between text items */
 }
 
 /* Skills Section */
@@ -219,4 +229,20 @@ body.dark-mode .theme-toggle {
 
 .theme-toggle:hover {
     transform: scale(1.1);
+}
+
+/* Section fade-in effect */
+section.visible {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
